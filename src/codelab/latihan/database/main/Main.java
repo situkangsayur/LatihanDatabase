@@ -22,12 +22,27 @@ public class Main {
 
     public static void main(String args[]) {
         System.out.println("hello world");
+        
         MahasiswaDao dao = new MahasiswaDao();
         try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        
+        MahasiswaDao mhsDataAccess = new MahasiswaDao();
+        
+        
+        
+        Mahasiswa mahasiswaBaru = new Mahasiswa();
+        mahasiswaBaru.setNim("10107877");
+        mahasiswaBaru.setNama("checking");
+        mahasiswaBaru.setAlamat("Bandung");
+        mahasiswaBaru.setTanggalLahir(new Date(1989, 06, 22));
+        
+        mhsDataAccess.insertMahasiswa(mahasiswaBaru);
+        mhsDataAccess.se
+        
         /*
         Mahasiswa mahasiswa = new Mahasiswa();
         
@@ -70,20 +85,35 @@ public class Main {
         System.out.println("Tanggal Lahir : " + result.getTanggalLahir());
          * */
 
-        Mahasiswa mahasiswaDelete = new Mahasiswa();
-        mahasiswaDelete.setNim("10107333");
-        
-        dao.deleteMahasiswa(mahasiswaDelete);
-
-        List<Mahasiswa> result = dao.selectAll();
-
-
-        for (Mahasiswa mhs : result) {
-            System.out.println("Nim : " + mhs.getNim());
-            System.out.println("Nama : " + mhs.getNama());
-            System.out.println("Alamat : " + mhs.getAlamat());
-            System.out.println("Tanggal Lahir : " + mhs.getTanggalLahir());
-        }
+//        Mahasiswa mahasiswaDelete = new Mahasiswa();
+//        mahasiswaDelete.setNim("10107333");
+//        
+//        dao.deleteMahasiswa(mahasiswaDelete);
+//
+//        List<Mahasiswa> result = dao.selectAll();
+//
+//
+//        for (Mahasiswa mhs : result) {
+//            System.out.println("Nim : " + mhs.getNim());
+//            System.out.println("Nama : " + mhs.getNama());
+//            System.out.println("Alamat : " + mhs.getAlamat());
+//            System.out.println("Tanggal Lahir : " + mhs.getTanggalLahir());
+//        }
+//                Mahasiswa mahasiswaDelete = new Mahasiswa();
+                
+//        mahasiswaDelete.setNim("10107333");
+//        
+//        dao.deleteMahasiswa(mahasiswaDelete);
+//
+//        List<Mahasiswa> result = dao.selectAll();
+//
+//
+//        for (Mahasiswa mhs : result) {
+//            System.out.println("Nim : " + mhs.getNim());
+//            System.out.println("Nama : " + mhs.getNama());
+//            System.out.println("Alamat : " + mhs.getAlamat());
+//            System.out.println("Tanggal Lahir : " + mhs.getTanggalLahir());
+//        }
 
 
     }
