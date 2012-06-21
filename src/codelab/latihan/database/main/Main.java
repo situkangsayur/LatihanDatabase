@@ -41,7 +41,7 @@ public class Main {
         mahasiswaBaru.setTanggalLahir(new Date(1989, 06, 22));
         
         mhsDataAccess.insertMahasiswa(mahasiswaBaru);
-        mhsDataAccess.se
+       
         
         /*
         Mahasiswa mahasiswa = new Mahasiswa();
